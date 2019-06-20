@@ -1,0 +1,147 @@
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+                android:background="@drawable/bg_collapsing"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp">
+
+
+            <ImageView
+                    android:id="@+id/toolbarImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bg_collapsing_image"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_gravity="top"
+            android:layout_marginBottom="56dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#ffffff"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_collapseMode="pin" />
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/collapsingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="bottom"
+                    android:background="#00FFFFFF"
+                    app:layout_collapseMode="pin"
+                    android:layout_height="56dp">
+
+                <EditText
+                        android:id="@+id/searchEditText"
+                        android:background="@drawable/bg_search_edit_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:textColorHint="#86000000"
+                        android:textColor="@android:color/black"
+                        android:drawableLeft="@drawable/ic_search_black_24dp"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="16dp"
+                        android:hint="@string/search_title"
+                        android:drawablePadding="16dp"
+                        android:paddingRight="16dp"
+                        android:layout_height="48dp"/>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+                <!--android:id="@+id/swipeRefresh"-->
+                <!--android:layout_width="match_parent"-->
+
+                <!--android:layout_height="match_parent">-->
+
+            <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/recommendedTitle"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Рекомендуемые"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recommendedList"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_height="310dp"/>
+
+
+                    <TextView
+                            android:id="@+id/popularTitle"
+                            android:text="Популярные"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="16dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/popularList"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_height="310dp"/>
+
+                </LinearLayout>
+
+
+
+            </android.support.v4.widget.NestedScrollView>
+
+
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+
+
+</android.support.design.widget.CoordinatorLayout>
